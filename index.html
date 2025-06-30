@@ -1,87 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Bhojan Bhumi - Authentic Nepali Cuisine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramen House</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --red: #e3342f;
+      --dark: #1f2937;
+      --gray: #f9fafb;
+      --white: #ffffff;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--white);
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+    }
+    .spinner-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .wheel {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 10px solid var(--red);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: spin 3s linear infinite;
+      background-image: conic-gradient(
+        #ffcc00 0deg 90deg,
+        #ff6666 90deg 180deg,
+        #66ccff 180deg 270deg,
+        #99ff99 270deg 360deg
+      );
+    }
+    .wheel span {
+      position: absolute;
+      text-align: center;
+      width: 100px;
+      font-weight: bold;
+    }
+    .wheel span:nth-child(1) { transform: rotate(45deg) translateY(-130px) rotate(-45deg); }
+    .wheel span:nth-child(2) { transform: rotate(135deg) translateY(-130px) rotate(-135deg); }
+    .wheel span:nth-child(3) { transform: rotate(225deg) translateY(-130px) rotate(-225deg); }
+    .wheel span:nth-child(4) { transform: rotate(315deg) translateY(-130px) rotate(-315deg); }
 
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .hero {
+      text-align: center;
+      background: linear-gradient(to right, rgba(255,0,0,0.7), rgba(255,0,0,0.7)), url('https://source.unsplash.com/1600x900/?ramen') no-repeat center/cover;
+      padding: 6rem 2rem;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: yellow;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      margin: 1rem 0.5rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--red);
+      color: white;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    .menu-grid, .gallery-grid, .review-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 6px;
+    }
+    .footer {
+      background: var(--dark);
+      color: white;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .footer h4 {
+      margin-bottom: 1rem;
+    }
+    .footer ul {
+      list-style: none;
+    }
+    .footer ul li {
+      margin: 0.5rem 0;
+    }
+    .footer input[type="email"] {
+      padding: 0.5rem;
+      width: 80%;
+      border: none;
+      border-radius: 4px;
+    }
+    .footer button {
+      background: var(--red);
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+    }
   </style>
-</head>
-<body>
-  <nav class="navbar">
-    <div class="logo">Bhojan Bhumi</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#reservation">Reservation</a></li>
-    </ul>
-  </nav>
-
-  <header class="hero" id="home">
-    <div class="hero-overlay" data-aos="fade-up">
-      <h1>Authentic Nepali Cuisine</h1>
-      <p>Traditional tastes served with warmth</p>
-      <a href="#reservation" class="btn" data-aos="zoom-in" data-aos-delay="200">Book a Table</a>
-    </div>
-  </header>
-
-  <!-- Animated wave divider -->
-  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#FFD97D" fill-opacity="1" d="M0,40 C360,80 1080,0 1440,60 L1440,70 L0,70 Z"></path></svg>
-
-  <section id="about" class="section" data-aos="fade-right">
-    <h2>About Us</h2>
-    <p style="font-size:24px; color:var(--text-light);">Experience Nepali hospitality with traditional cuisine and cultural ambiance at the heart of Kathmandu.</p>
-  </section>
-
-  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#FFD97D" fill-opacity="1" d="M0,40 C360,80 1080,0 1440,60 L1440,70 L0,70 Z"></path></svg>
-
-  <section id="menu" class="section" data-aos="fade-up">
-    <h2 data-aos="fade-up" data-aos-delay="100">Our Menu</h2>
-    <div class="menu-grid">
-      <div class="menu-item" data-aos="zoom-in" data-aos-delay="0"><h3>Momo</h3><p>Nepali steamed dumplings</p></div>
-      <div class="menu-item" data-aos="zoom-in" data-aos-delay="120"><h3>Dal Bhat Set</h3><p>Rice, lentils, vegetables & meat</p></div>
-      <div class="menu-item" data-aos="zoom-in" data-aos-delay="240"><h3>Sel Roti</h3><p>Traditional sweet rice doughnut</p></div>
-      <div class="menu-item" data-aos="zoom-in" data-aos-delay="360"><h3>Thukpa</h3><p>Nepali noodle soup</p></div>
-    </div>
-  </section>
-
-  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#FFD97D" fill-opacity="1" d="M0,40 C360,80 1080,0 1440,60 L1440,70 L0,70 Z"></path></svg>
-
-  <section id="gallery" class="section" data-aos="fade-left">
-    <h2>Gallery</h2>
-    <img src="hero.jpg" alt="Gallery Image" data-aos="zoom-in" data-aos-delay="120">
-  </section>
-
-  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#FFD97D" fill-opacity="1" d="M0,40 C360,80 1080,0 1440,60 L1440,70 L0,70 Z"></path></svg>
-
-  <section id="reservation" class="section" data-aos="fade-up">
-    <h2 data-aos="fade-up" data-aos-delay="100">Reserve a Table</h2>
-    <form class="reservation-form" data-aos="zoom-in" data-aos-delay="200">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="date" required>
-      <input type="time" required>
-      <button type="submit" class="btn">Book Now</button>
-    </form>
-  </section>
-
-  <footer>
-    © 2025 Bhojan Bhumi • Kathmandu, Nepal
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 900,
-      once: true,
-      easing: 'ease-in-out'
+    window.addEventListener('load', () => {
+      const spinner = document.querySelector('.spinner-wrapper');
+      setTimeout(() => {
+        spinner.style.display = 'none';
+      }, 3000);
     });
   </script>
+</head>
+<body>
+  <div class="spinner-wrapper">
+    <div class="wheel">
+      <span>Shoyu</span>
+      <span>Miso</span>
+      <span>Tonkotsu</span>
+      <span>Shio</span>
+    </div>
+  </div>
+
+  <header>
+    <h1>🍜 Ramen House</h1>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#blog">Blog</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a href="#" class="btn btn-primary">Reserve Table</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Authentic Japanese</h1>
+    <h2>Ramen Experience</h2>
+    <p>Discover the art of traditional ramen making with fresh ingredients and customizable bowls crafted to perfection.</p>
+    <div>
+      <button class="btn btn-primary">Order Now 🍜</button>
+      <button class="btn btn-outline">View Menu</button>
+    </div>
+  </section>
+
+  <section class="section" id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?ramen" alt="Ramen">
+        <h3>Classic Tonkotsu Ramen</h3>
+        <p>$16.99</p>
+        <button class="btn btn-primary">Customize</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?noodles" alt="Ramen">
+        <h3>Shoyu Ramen</h3>
+        <p>$14.99</p>
+        <button class="btn btn-primary">Customize</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <h2>Food Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://source.unsplash.com/400x300/?japanese-food" alt="Food">
+      <img src="https://source.unsplash.com/400x300/?ramen-noodles" alt="Food">
+      <img src="https://source.unsplash.com/400x300/?sushi" alt="Food">
+    </div>
+  </section>
+
+  <section class="section" id="blog">
+    <h2>Ramen Culture & Stories</h2>
+    <div class="menu-grid">
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?kitchen" />
+        <h3>The History of Ramen</h3>
+        <p>Explore how ramen evolved from Chinese noodles to Japan’s beloved food.</p>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?noodles,japan" />
+        <h3>Ramen Styles</h3>
+        <p>Shoyu, Miso, Shio and Tonkotsu explained in depth.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <h2>Customer Reviews</h2>
+    <div class="review-grid">
+      <div class="card">
+        <h3>Akira Tanaka</h3>
+        <p>"Absolutely authentic! Reminds me of home. The tonkotsu ramen is incredible!"</p>
+      </div>
+      <div class="card">
+        <h3>Maria Rodriguez</h3>
+        <p>"Love the customization options and fast service. Highly recommended."</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Visit Us</h2>
+    <p style="text-align:center;">123 Ramen Street, Tokyo District, NY 10001</p>
+    <p style="text-align:center;">Email: hello@ramenhouse.com | Phone: (555) 123-RAMEN</p>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <h4>Ramen House</h4>
+      <p>Authentic Japanese ramen with traditional flavors and modern convenience.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li>Menu</li>
+        <li>Gallery</li>
+        <li>Reviews</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Newsletter</h4>
+      <input type="email" placeholder="Your email" />
+      <button>Subscribe</button>
+    </div>
+  </footer>
 </body>
 </html>
