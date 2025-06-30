@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bhojan Bhumi - Authentic Nepali Cuisine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Bhojan Bhumi</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reservation">Reservation</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-overlay" data-aos="fade-up">
+      <h1>Authentic Nepali Cuisine</h1>
+      <p>Traditional tastes served with warmth</p>
+      <a href="#reservation" class="btn" data-aos="zoom-in" data-aos-delay="200">Book a Table</a>
+    </div>
+  </header>
+
+  <!-- Animated wave divider -->
+  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#FFD97D" fill-opacity="1" d="M0,40 C360,80 1080,0 1440,60 L1440,70 L0,70 Z"></path></svg>
+
+  <section id="about" class="section" data-aos="fade-right">
+    <h2>About Us</h2>
+    <p style="font-size:24px; color:var(--text-light);">Experience Nepali hospitality with traditional cuisine and cultural ambiance at the heart of Kathmandu.</p>
+  </section>
+
+  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#FFD97D" fill-opacity="1" d="M0,40 C360,80 1080,0 1440,60 L1440,70 L0,70 Z"></path></svg>
+
+  <section id="menu" class="section" data-aos="fade-up">
+    <h2 data-aos="fade-up" data-aos-delay="100">Our Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-item" data-aos="zoom-in" data-aos-delay="0"><h3>Momo</h3><p>Nepali steamed dumplings</p></div>
+      <div class="menu-item" data-aos="zoom-in" data-aos-delay="120"><h3>Dal Bhat Set</h3><p>Rice, lentils, vegetables & meat</p></div>
+      <div class="menu-item" data-aos="zoom-in" data-aos-delay="240"><h3>Sel Roti</h3><p>Traditional sweet rice doughnut</p></div>
+      <div class="menu-item" data-aos="zoom-in" data-aos-delay="360"><h3>Thukpa</h3><p>Nepali noodle soup</p></div>
+    </div>
+  </section>
+
+  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#FFD97D" fill-opacity="1" d="M0,40 C360,80 1080,0 1440,60 L1440,70 L0,70 Z"></path></svg>
+
+  <section id="gallery" class="section" data-aos="fade-left">
+    <h2>Gallery</h2>
+    <img src="hero.jpg" alt="Gallery Image" data-aos="zoom-in" data-aos-delay="120">
+  </section>
+
+  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#FFD97D" fill-opacity="1" d="M0,40 C360,80 1080,0 1440,60 L1440,70 L0,70 Z"></path></svg>
+
+  <section id="reservation" class="section" data-aos="fade-up">
+    <h2 data-aos="fade-up" data-aos-delay="100">Reserve a Table</h2>
+    <form class="reservation-form" data-aos="zoom-in" data-aos-delay="200">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="date" required>
+      <input type="time" required>
+      <button type="submit" class="btn">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Bhojan Bhumi • Kathmandu, Nepal
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true,
+      easing: 'ease-in-out'
+    });
+  </script>
+</body>
+</html>
