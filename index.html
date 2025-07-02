@@ -4,194 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ramen House</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --red: #e3342f;
-      --dark: #1f2937;
-      --gray: #f9fafb;
-      --white: #ffffff;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      background: var(--white);
-      color: var(--dark);
-      line-height: 1.6;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: var(--white);
-      border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 600;
-    }
-    .spinner-wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: var(--white);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-    .wheel {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      border: 10px solid var(--red);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      animation: spin 3s linear infinite;
-      background-image: conic-gradient(
-        #ffcc00 0deg 90deg,
-        #ff6666 90deg 180deg,
-        #66ccff 180deg 270deg,
-        #99ff99 270deg 360deg
-      );
-    }
-    .wheel span {
-      position: absolute;
-      text-align: center;
-      width: 100px;
-      font-weight: bold;
-    }
-    .wheel span:nth-child(1) { transform: rotate(45deg) translateY(-130px) rotate(-45deg); }
-    .wheel span:nth-child(2) { transform: rotate(135deg) translateY(-130px) rotate(-135deg); }
-    .wheel span:nth-child(3) { transform: rotate(225deg) translateY(-130px) rotate(-225deg); }
-    .wheel span:nth-child(4) { transform: rotate(315deg) translateY(-130px) rotate(-315deg); }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .hero {
-      text-align: center;
-      background: linear-gradient(to right, rgba(255,0,0,0.7), rgba(255,0,0,0.7)), url('https://source.unsplash.com/1600x900/?ramen') no-repeat center/cover;
-      padding: 6rem 2rem;
-      color: white;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      font-weight: 600;
-      color: yellow;
-    }
-    .btn {
-      padding: 0.75rem 1.5rem;
-      margin: 1rem 0.5rem;
-      border-radius: 8px;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .btn-primary {
-      background: var(--red);
-      color: white;
-    }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid white;
-      color: white;
-    }
-    .section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .section h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-      font-weight: 800;
-    }
-    .menu-grid, .gallery-grid, .review-grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .card {
-      background: var(--white);
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .card img {
-      width: 100%;
-      border-radius: 6px;
-    }
-    .footer {
-      background: var(--dark);
-      color: white;
-      padding: 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-    .footer h4 {
-      margin-bottom: 1rem;
-    }
-    .footer ul {
-      list-style: none;
-    }
-    .footer ul li {
-      margin: 0.5rem 0;
-    }
-    .footer input[type="email"] {
-      padding: 0.5rem;
-      width: 80%;
-      border: none;
-      border-radius: 4px;
-    }
-    .footer button {
-      background: var(--red);
-      color: white;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 4px;
-      margin-top: 0.5rem;
-    }
-  </style>
-  <script>
-    window.addEventListener('load', () => {
-      const spinner = document.querySelector('.spinner-wrapper');
-      setTimeout(() => {
-        spinner.style.display = 'none';
-      }, 3000);
-    });
-  </script>
 </head>
 <body>
-  <div class="spinner-wrapper">
-    <div class="wheel">
-      <span>Shoyu</span>
-      <span>Miso</span>
-      <span>Tonkotsu</span>
-      <span>Shio</span>
-    </div>
-  </div>
 
   <header>
     <h1>🍜 Ramen House</h1>
@@ -232,6 +49,12 @@
       </div>
     </div>
   </section>
+  <div class="dish-carousel">
+  <img id="prevDish" class="dish-preview prev" />
+  <img id="currentDish" class="dish-preview current" />
+  <img id="nextDish" class="dish-preview next" />
+</div>
+
 
   <section class="section" id="gallery">
     <h2>Food Gallery</h2>
@@ -278,7 +101,7 @@
     <p style="text-align:center;">Email: hello@ramenhouse.com | Phone: (555) 123-RAMEN</p>
   </section>
 
-  <footer class="footer">
+  <footer>
     <div>
       <h4>Ramen House</h4>
       <p>Authentic Japanese ramen with traditional flavors and modern convenience.</p>
@@ -298,5 +121,7 @@
       <button>Subscribe</button>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
