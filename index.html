@@ -3,124 +3,607 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ramen House</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Ramen House - Authentic Japanese Experience</title>
+  <meta name="description" content="Experience authentic Japanese ramen with traditional flavors and modern convenience at Ramen House.">
+  <meta name="keywords" content="ramen, japanese food, authentic ramen, ramen house, tonkotsu, shoyu, miso ramen, japanese cuisine">
+  <meta name="author" content="Ramen House Team">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍜</text></svg>">
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="ramen-bowl">
+        <div class="bowl"></div>
+        <div class="chopsticks"></div>
+      </div>
+      <div class="loading-text">Preparing your ramen...</div>
+    </div>
+  </div>
 
-  <header>
-    <h1>🍜 Ramen House</h1>
-    <nav>
-      <a href="#menu">Menu</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#blog">Blog</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#contact">Contact</a>
-      <a href="#" class="btn btn-primary">Reserve Table</a>
-    </nav>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-icon">🍜</span>
+        <span class="logo-text">Ramen House</span>
+      </div>
+      <nav class="nav-menu">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button class="reserve-btn">
+          <i class="fas fa-utensils"></i>
+          <span>Reserve Table</span>
+        </button>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1>Authentic Japanese</h1>
-    <h2>Ramen Experience</h2>
-    <p>Discover the art of traditional ramen making with fresh ingredients and customizable bowls crafted to perfection.</p>
-    <div>
-      <button class="btn btn-primary">Order Now 🍜</button>
-      <button class="btn btn-outline">View Menu</button>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+      <video autoplay muted loop class="hero-video">
+        <source src="https://cdn.pixabay.com/vimeo/452096131/ramen-32327.mp4" type="video/mp4">
+      </video>
     </div>
-  </section>
-
-  <section class="section" id="menu">
-    <h2>Our Menu</h2>
-    <div class="menu-grid">
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?ramen" alt="Ramen">
-        <h3>Classic Tonkotsu Ramen</h3>
-        <p>$16.99</p>
-        <button class="btn btn-primary">Customize</button>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          <span class="title-line">Authentic</span>
+          <span class="title-line highlight">Japanese Ramen</span>
+          <span class="title-line">Experience</span>
+        </h1>
+        <p class="hero-subtitle">
+          Discover the art of traditional ramen making with fresh ingredients 
+          and customizable bowls crafted to perfection by our master chefs.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Order Now</span>
+          </button>
+          <button class="btn btn-secondary">
+            <i class="fas fa-play-circle"></i>
+            <span>Watch Story</span>
+          </button>
+        </div>
       </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?noodles" alt="Ramen">
-        <h3>Shoyu Ramen</h3>
-        <p>$14.99</p>
-        <button class="btn btn-primary">Customize</button>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">5000+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Ramen Varieties</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4.9★</div>
+          <div class="stat-label">Rating</div>
+        </div>
       </div>
     </div>
-  </section>
-  <div class="dish-carousel">
-  <img id="prevDish" class="dish-preview prev" />
-  <img id="currentDish" class="dish-preview current" />
-  <img id="nextDish" class="dish-preview next" />
-</div>
-
-
-  <section class="section" id="gallery">
-    <h2>Food Gallery</h2>
-    <div class="gallery-grid">
-      <img src="https://source.unsplash.com/400x300/?japanese-food" alt="Food">
-      <img src="https://source.unsplash.com/400x300/?ramen-noodles" alt="Food">
-      <img src="https://source.unsplash.com/400x300/?sushi" alt="Food">
-    </div>
-  </section>
-
-  <section class="section" id="blog">
-    <h2>Ramen Culture & Stories</h2>
-    <div class="menu-grid">
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?kitchen" />
-        <h3>The History of Ramen</h3>
-        <p>Explore how ramen evolved from Chinese noodles to Japan’s beloved food.</p>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?noodles,japan" />
-        <h3>Ramen Styles</h3>
-        <p>Shoyu, Miso, Shio and Tonkotsu explained in depth.</p>
+    <div class="scroll-indicator">
+      <div class="scroll-arrow">
+        <i class="fas fa-chevron-down"></i>
       </div>
     </div>
   </section>
 
-  <section class="section" id="reviews">
-    <h2>Customer Reviews</h2>
-    <div class="review-grid">
-      <div class="card">
-        <h3>Akira Tanaka</h3>
-        <p>"Absolutely authentic! Reminds me of home. The tonkotsu ramen is incredible!"</p>
+  <!-- Menu Section -->
+  <section id="menu" class="menu-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Signature Menu</h2>
+        <p class="section-subtitle">Handcrafted bowls with authentic flavors</p>
       </div>
-      <div class="card">
-        <h3>Maria Rodriguez</h3>
-        <p>"Love the customization options and fast service. Highly recommended."</p>
+      
+      <div class="menu-categories">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="ramen">Ramen</button>
+        <button class="category-btn" data-category="appetizers">Appetizers</button>
+        <button class="category-btn" data-category="drinks">Drinks</button>
+      </div>
+
+      <div class="menu-grid">
+        <div class="menu-item" data-category="ramen">
+          <div class="menu-item-image">
+            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?ixlib=rb-4.0.3&w=500&q=80" alt="Tonkotsu Ramen">
+            <div class="menu-item-overlay">
+              <button class="customize-btn">
+                <i class="fas fa-cog"></i>
+                <span>Customize</span>
+              </button>
+            </div>
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Classic Tonkotsu Ramen</h3>
+              <span class="price">$16.99</span>
+            </div>
+            <p class="menu-item-description">
+              Rich pork bone broth with tender chashu, soft-boiled egg, and fresh scallions
+            </p>
+            <div class="menu-item-tags">
+              <span class="tag">Popular</span>
+              <span class="tag">Spicy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="ramen">
+          <div class="menu-item-image">
+            <img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?ixlib=rb-4.0.3&w=500&q=80" alt="Shoyu Ramen">
+            <div class="menu-item-overlay">
+              <button class="customize-btn">
+                <i class="fas fa-cog"></i>
+                <span>Customize</span>
+              </button>
+            </div>
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Traditional Shoyu Ramen</h3>
+              <span class="price">$14.99</span>
+            </div>
+            <p class="menu-item-description">
+              Clear soy sauce based broth with bamboo shoots, nori, and tender pork
+            </p>
+            <div class="menu-item-tags">
+              <span class="tag">Traditional</span>
+              <span class="tag">Light</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="ramen">
+          <div class="menu-item-image">
+            <img src="https://images.unsplash.com/photo-1623341214825-9f4f963727da?ixlib=rb-4.0.3&w=500&q=80" alt="Miso Ramen">
+            <div class="menu-item-overlay">
+              <button class="customize-btn">
+                <i class="fas fa-cog"></i>
+                <span>Customize</span>
+              </button>
+            </div>
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Spicy Miso Ramen</h3>
+              <span class="price">$15.99</span>
+            </div>
+            <p class="menu-item-description">
+              Fermented soybean paste broth with corn, ground pork, and chili oil
+            </p>
+            <div class="menu-item-tags">
+              <span class="tag">Spicy</span>
+              <span class="tag">Rich</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="appetizers">
+          <div class="menu-item-image">
+            <img src="https://images.unsplash.com/photo-1541782432458-01a3ce869ce4?ixlib=rb-4.0.3&w=500&q=80" alt="Gyoza">
+            <div class="menu-item-overlay">
+              <button class="customize-btn">
+                <i class="fas fa-plus"></i>
+                <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Handmade Gyoza</h3>
+              <span class="price">$8.99</span>
+            </div>
+            <p class="menu-item-description">
+              Pan-fried dumplings filled with pork and vegetables, served with dipping sauce
+            </p>
+            <div class="menu-item-tags">
+              <span class="tag">Appetizer</span>
+              <span class="tag">Handmade</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="drinks">
+          <div class="menu-item-image">
+            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&w=500&q=80" alt="Green Tea">
+            <div class="menu-item-overlay">
+              <button class="customize-btn">
+                <i class="fas fa-plus"></i>
+                <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Premium Green Tea</h3>
+              <span class="price">$3.99</span>
+            </div>
+            <p class="menu-item-description">
+              Authentic Japanese matcha green tea, perfectly complementing your ramen
+            </p>
+            <div class="menu-item-tags">
+              <span class="tag">Organic</span>
+              <span class="tag">Traditional</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="appetizers">
+          <div class="menu-item-image">
+            <img src="https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?ixlib=rb-4.0.3&w=500&q=80" alt="Takoyaki">
+            <div class="menu-item-overlay">
+              <button class="customize-btn">
+                <i class="fas fa-plus"></i>
+                <span>Add to Cart</span>
+              </button>
+            </div>
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Takoyaki Balls</h3>
+              <span class="price">$9.99</span>
+            </div>
+            <p class="menu-item-description">
+              Octopus balls with takoyaki sauce, mayonnaise, and bonito flakes
+            </p>
+            <div class="menu-item-tags">
+              <span class="tag">Street Food</span>
+              <span class="tag">Crispy</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="contact">
-    <h2>Visit Us</h2>
-    <p style="text-align:center;">123 Ramen Street, Tokyo District, NY 10001</p>
-    <p style="text-align:center;">Email: hello@ramenhouse.com | Phone: (555) 123-RAMEN</p>
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Food Gallery</h2>
+        <p class="section-subtitle">A visual feast of our authentic dishes</p>
+      </div>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?ixlib=rb-4.0.3&w=600&q=80" alt="Ramen Bowl">
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Perfect Ramen Bowl</h3>
+              <p>Crafted with love and tradition</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?ixlib=rb-4.0.3&w=600&q=80" alt="Chef Cooking">
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Master Chef at Work</h3>
+              <p>Years of experience in every bowl</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1541782432458-01a3ce869ce4?ixlib=rb-4.0.3&w=600&q=80" alt="Fresh Ingredients">
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Fresh Ingredients</h3>
+              <p>Only the finest quality ingredients</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item large">
+          <img src="https://images.unsplash.com/photo-1623341214825-9f4f963727da?ixlib=rb-4.0.3&w=800&q=80" alt="Restaurant Interior">
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Authentic Atmosphere</h3>
+              <p>Traditional Japanese dining experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <div>
-      <h4>Ramen House</h4>
-      <p>Authentic Japanese ramen with traditional flavors and modern convenience.</p>
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="section-title">Our Story</h2>
+          <p class="about-description">
+            Founded in 2015 by Master Chef Hiroshi Tanaka, Ramen House brings the authentic taste 
+            of Japanese ramen to your neighborhood. With over 20 years of experience in Tokyo's 
+            finest ramen shops, Chef Tanaka crafts each bowl with traditional techniques and 
+            modern innovation.
+          </p>
+          <div class="about-features">
+            <div class="feature">
+              <i class="fas fa-award"></i>
+              <div>
+                <h3>Award Winning</h3>
+                <p>Best Ramen Restaurant 2023</p>
+              </div>
+            </div>
+            <div class="feature">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h3>20+ Years</h3>
+                <p>Of culinary expertise</p>
+              </div>
+            </div>
+            <div class="feature">
+              <i class="fas fa-leaf"></i>
+              <div>
+                <h3>Fresh Daily</h3>
+                <p>Handmade noodles & broth</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&w=600&q=80" alt="Chef Hiroshi">
+          <div class="about-image-overlay">
+            <div class="chef-quote">
+              <i class="fas fa-quote-left"></i>
+              <p>"Every bowl tells a story of tradition and passion"</p>
+              <cite>- Chef Hiroshi Tanaka</cite>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-      <h4>Quick Links</h4>
-      <ul>
-        <li>Menu</li>
-        <li>Gallery</li>
-        <li>Reviews</li>
-        <li>Contact</li>
-      </ul>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="reviews-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Real reviews from real ramen lovers</p>
+      </div>
+      
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&w=100&q=80" alt="John Smith">
+              <div>
+                <h3>John Smith</h3>
+                <p>Food Blogger</p>
+              </div>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <p class="review-text">
+            "Absolutely incredible! The tonkotsu ramen here is the closest I've tasted to authentic 
+            Tokyo ramen. The broth is rich and flavorful, and the noodles have the perfect texture."
+          </p>
+          <div class="review-date">2 days ago</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <img src="https://images.unsplash.com/photo-1494790108755-2616b2e2ebfc?ixlib=rb-4.0.3&w=100&q=80" alt="Maria Garcia">
+              <div>
+                <h3>Maria Garcia</h3>
+                <p>Regular Customer</p>
+              </div>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <p class="review-text">
+            "I've been coming here for months and every visit is exceptional. The staff is friendly, 
+            the atmosphere is perfect, and the customization options make it feel personal."
+          </p>
+          <div class="review-date">1 week ago</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&w=100&q=80" alt="David Chen">
+              <div>
+                <h3>David Chen</h3>
+                <p>Local Resident</p>
+              </div>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <p class="review-text">
+            "As someone who lived in Japan for 3 years, I can say this is the real deal. 
+            The attention to detail and authentic flavors transport you straight to Tokyo."
+          </p>
+          <div class="review-date">2 weeks ago</div>
+        </div>
+      </div>
     </div>
-    <div>
-      <h4>Newsletter</h4>
-      <input type="email" placeholder="Your email" />
-      <button>Subscribe</button>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-info">
+          <h2 class="section-title">Visit Us Today</h2>
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h3>Location</h3>
+                <p>123 Ramen Street<br>Tokyo District, NY 10001</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h3>Phone</h3>
+                <p>(555) 123-RAMEN</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h3>Email</h3>
+                <p>hello@ramenhouse.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h3>Hours</h3>
+                <p>Mon-Thu: 11am-10pm<br>Fri-Sat: 11am-11pm<br>Sun: 12pm-9pm</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Make a Reservation</h3>
+          <form>
+            <div class="form-group">
+              <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Phone Number" required>
+            </div>
+            <div class="form-group">
+              <input type="date" required>
+            </div>
+            <div class="form-group">
+              <input type="time" required>
+            </div>
+            <div class="form-group">
+              <select required>
+                <option value="">Party Size</option>
+                <option value="1">1 Person</option>
+                <option value="2">2 People</option>
+                <option value="3">3 People</option>
+                <option value="4">4 People</option>
+                <option value="5+">5+ People</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Special Requests" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-calendar-check"></i>
+              <span>Make Reservation</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <span class="logo-icon">🍜</span>
+            <span class="logo-text">Ramen House</span>
+          </div>
+          <p>Authentic Japanese ramen with traditional flavors and modern convenience.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Menu Categories</h4>
+          <ul>
+            <li><a href="#">Ramen</a></li>
+            <li><a href="#">Appetizers</a></li>
+            <li><a href="#">Drinks</a></li>
+            <li><a href="#">Desserts</a></li>
+            <li><a href="#">Specials</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Newsletter</h4>
+          <p>Subscribe for exclusive offers and new menu updates</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Ramen House. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
   <script src="script.js"></script>
 </body>
