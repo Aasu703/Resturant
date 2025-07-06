@@ -25,50 +25,50 @@ window.addEventListener('load', () => {
     setTimeout(() => loader.remove(), 500);
   }
 
-  const showcase = document.createElement('div');
-  showcase.className = 'showcase';
+  // const showcase = document.createElement('div');
+  // showcase.className = 'showcase';
 
-  const showcaseContent = document.createElement('div');
-  showcaseContent.className = 'showcase-content';
+  // const showcaseContent = document.createElement('div');
+  // showcaseContent.className = 'showcase-content';
 
-  showcaseContent.innerHTML = `
-    <img id="ramenImage" src="${ramenDishes[0].image}" alt="ramen" />
-    <h1 id="ramenName">${ramenDishes[0].name}</h1>
-    <div class="dish-counter">
-      <span id="currentDish">1</span> of ${ramenDishes.length}
-    </div>
-    <button id="nextBtn">
-      <span>Next Dish</span>
-      <i class="fas fa-arrow-right"></i>
-    </button>
-  `;
+  // showcaseContent.innerHTML = `
+  //   <img id="ramenImage" src="${ramenDishes[0].image}" alt="ramen" />
+  //   <h1 id="ramenName">${ramenDishes[0].name}</h1>
+  //   <div class="dish-counter">
+  //     <span id="currentDish">1</span> of ${ramenDishes.length}
+  //   </div>
+  //   <button id="nextBtn">
+  //     <span>Next Dish</span>
+  //     <i class="fas fa-arrow-right"></i>
+  //   </button>
+  // `;
 
   // Create progress dots
-  const progressDots = document.createElement('div');
-  progressDots.className = 'progress-dots';
-  for (let i = 0; i < ramenDishes.length; i++) {
-    const dot = document.createElement('div');
-    dot.className = `dot ${i === 0 ? 'active' : ''}`;
-    dot.addEventListener('click', () => goToDish(i));
-    progressDots.appendChild(dot);
-  }
+  // const progressDots = document.createElement('div');
+  // progressDots.className = 'progress-dots';
+  // for (let i = 0; i < ramenDishes.length; i++) {
+  //   const dot = document.createElement('div');
+  //   dot.className = `dot ${i === 0 ? 'active' : ''}`;
+  //   dot.addEventListener('click', () => goToDish(i));
+  //   progressDots.appendChild(dot);
+  // }
 
   // Create floating particles
-  const particles = document.createElement('div');
-  particles.className = 'particles';
-  for (let i = 0; i < 20; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.animationDelay = Math.random() * 3 + 's';
-    particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
-    particles.appendChild(particle);
-  }
+  // const particles = document.createElement('div');
+  // particles.className = 'particles';
+  // for (let i = 0; i < 20; i++) {
+  //   const particle = document.createElement('div');
+  //   particle.className = 'particle';
+  //   particle.style.left = Math.random() * 100 + '%';
+  //   particle.style.animationDelay = Math.random() * 3 + 's';
+  //   particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+  //   particles.appendChild(particle);
+  // }
 
-  showcase.appendChild(particles);
-  showcase.appendChild(showcaseContent);
-  showcase.appendChild(progressDots);
-  document.body.appendChild(showcase);
+  // showcase.appendChild(particles);
+  // showcase.appendChild(showcaseContent);
+  // showcase.appendChild(progressDots);
+  // document.body.appendChild(showcase);
 
   // Next button functionality
   document.getElementById('nextBtn').onclick = () => {

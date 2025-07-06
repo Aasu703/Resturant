@@ -258,12 +258,16 @@ body {
 /* Hero Section */
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: calc(110vh - 80px); 
+  padding-top: 80px;               
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin-top : 40px; 
 }
+
+
 
 .hero-background {
   position: absolute;
